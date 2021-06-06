@@ -1,0 +1,5 @@
+sudo pip3 install jira
+pip3 install atlassian-python-api  
+
+timedatectl 
+sudo timedatectl set-timezone Europe/Helsinki
