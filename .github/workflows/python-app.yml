@@ -32,23 +32,5 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest         # The name of the workflow (required)
-      command: pytest ${{ secrets.USER }} ${{ secrets.API_KEY }}              # The command to execute the workflow (required)
-      files:
-      - path: "as_main_test.py"
-        should_exist: true            # Whether a file should be there or not. (optional, if not given defaults to true)
-
-#run: |
-#        cd testing 
-#        ls -la
-#        pytest
-        
-    - name: simple echo                  # A second workflow. Notice the starting `-` which means
-      command: "echo moo"                # that workflow items are in a list. You can add as much workflows as you want
-      files:
-      - path: "moo.txt"
-        should_exist: false            # Whether a file should be there or not. (optional, if not given defaults to true)
-      stdout:                            # Options for testing stdout (optional)
-      contains:                        # List of strings which should be in stdout (optional)
-      - "moo"
-      must_not_contain:                # List of strings that should NOT be in stout (optional)
-      - "Cock a doodle doo"
+      run: |
+        pytest ${{ secrets.USER }} ${{ secrets.API_KEY }}
