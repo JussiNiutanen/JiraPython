@@ -33,4 +33,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest         # The name of the workflow (required)
       run: |
-        pytest ${{ secrets.USER }} ${{ secrets.API_KEY }} --import-mode=append ./tests
+        pytest --import-mode=append ./testing
