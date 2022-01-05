@@ -10,14 +10,15 @@ from datetime import datetime, timedelta
 #import logging
 
 class MyData:
-    def __init__(self, instance_url, board_id):
+    def __init__(self, instance_url, board_id, user, apikey):
         self.c_jira_url = instance_url
         self.c_boar_id = board_id 
+        self.c_user = user
+        self.c_apikey = apikey
+
 #        logging.basicConfig(level=logging.DEBUG, 
 #                            format='%(asctime)s %(levelname)s %(message)s', 
 #                            filename='/tmp/auto_sprint.log', filemode='w')
-    c_user = 
-    c_apikey = 
     c_accept_header = {"Accept": "application/json"}
     c_common_headers = {
         "Accept": "application/json",
