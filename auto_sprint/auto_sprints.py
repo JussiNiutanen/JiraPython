@@ -3,11 +3,10 @@
 Sprint close and new sprint automation module
 '''
 
-#import sys
 import json
 from datetime import datetime, timedelta
+from common import MyCommonFunc
 import requests
-#import logging
 
 class MyData:
     """ MyData class """
@@ -61,20 +60,12 @@ class MyData:
 
         active_pos = res.find(sprint_state)
 
-        id_postion = res.rfind("\'id\'", 0,active_pos)
-        # Remove not needed marks from the begining of the string
-        sprint_id = res[id_postion+5::]
-        # Copy string for later to get the name
-        sprint_name = sprint_id
-        # Remove not needed marks from the end of the sring
-        sprint_id = sprint_id[0:sprint_id.find(",")]
-
-        # Save position of the sprint name text to id parameter.
-        name_position = sprint_name.find("\'name\'")
-        # Remove not needed marks from the begining of the string
-        sprint_name = sprint_name[name_position+9::]
-        # Remove not needed marks from the end of the sring
-        sprint_name = sprint_name[0:sprint_name.find("\'")]
+        common_data = MyCommonFunc()
+        common_data.get_sprint_details(res, active_pos)
+        #id_postion = common_data.get_id_position(common_data)
+        sprint_id = common_data.get_sprint_id()
+        sprint_name = common_data.get_sprint_name()
+        #name_position = common_data.get_name_position(common_data)
 
         return sprint_id.strip(), sprint_name.strip()
 
