@@ -1,19 +1,21 @@
+""" Module to close and start sprints bi-weekly"""
+
 import sys
 from datetime import date
 from auto_sprints import MyData
 
 weekNumber = date.today().isocalendar()[1]
-if(0==weekNumber%2):
+if 0==weekNumber%2:
     print("Week number parillinen:", weekNumber)
 else:
     print("Week number pariton:", weekNumber)
-    quit()
+    sys.exit()
 
 try:
-    sys.argv[1], sys.argv[2]
+    sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4]
 except IndexError:
     print("\n TOO FEW PARAMETERS \n")
-    quit()
-   
-d = MyData(sys.argv[1],sys.argv[2])
+    sys.exit()
+
+d = MyData(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 d.update_sprints()
