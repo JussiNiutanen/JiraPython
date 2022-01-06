@@ -1,4 +1,7 @@
-# content of as_main_test.py
+'''
+@author: Jussi Niutanen
+Content of as_main_test.py
+'''
 
 def func(param):
     '''Example for func test, return param + 1'''

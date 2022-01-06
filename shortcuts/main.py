@@ -21,9 +21,8 @@ except IndexError:
     print("\n TOO FEW PARAMETERS \n")
     sys.exit()
 
-with open('./config.yaml') as f:
-
-    data = yaml.load(f, Loader=yaml.FullLoader)
+with open('./config.yaml','r',encoding='utf8') as conf_file:
+    data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
 my = MyLogin(data)
 current_state = my.strip_and_casefold(sys.argv[1])
