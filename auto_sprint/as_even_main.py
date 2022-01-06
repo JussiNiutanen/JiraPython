@@ -1,4 +1,7 @@
-""" Module to close and start sprints bi-weekly"""
+'''
+@author: Jussi Niutanen
+Module to close and start sprints bi-weekly
+'''
 
 import sys
 from datetime import date

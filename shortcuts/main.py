@@ -1,3 +1,8 @@
+'''
+@author: Jussi Niutanen
+Issue transition main module
+'''
+
 import sys
 #import requests
 #import json
@@ -14,7 +19,7 @@ try:
     sys.argv[1], sys.argv[2]
 except IndexError:
     print("\n TOO FEW PARAMETERS \n")
-    quit()
+    sys.exit()
 
 with open('./config.yaml') as f:
 
