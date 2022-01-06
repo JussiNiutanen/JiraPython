@@ -1,10 +1,10 @@
-import sys
+#import sys
 import requests
 import json
 #from _dummy_thread import exit
 #from datetime import datetime, timedelta
 #import logging from _ast import If
-import yaml
+#import yaml
 
 todo = 'todo'
 progress = 'progress'
