@@ -3,6 +3,7 @@
 Common fuctions for sprint automation and shorcuts
 '''
 
+import json
 #from _typeshed import Self
 
 class MyCommonFunc:
@@ -47,3 +48,16 @@ class MyCommonFunc:
         self.sprint_name = self.sprint_name[self.name_position+9::]
         # Remove not needed marks from the end of the sring
         self.sprint_name = self.sprint_name[0:self.sprint_name.find("\'")]
+
+    @staticmethod
+    def make_request(requests, url, accept_header, user, apikey):
+        """ make regust and return json load """
+        response_get = requests.get(url, headers=accept_header, auth=(user, apikey))
+        # Save position of the active text to id parameter.
+        res = response_get.text
+        #self.debug_log(json.dumps(json.loads(res), sort_keys=True, indent=4,
+        #    separators=(",", ": ")),response_get)
+
+        # For some reason sometimes the request returns active sprint from other board.
+        # The next lines will filter sprints related to other boards away.
+        return json.loads(res)

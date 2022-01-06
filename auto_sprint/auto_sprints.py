@@ -44,23 +44,26 @@ class MyData:
         url = self.c_jira_url + "/rest/agile/1.0/board/" + self.c_boar_id + "/sprint"
         #headers = {"Accept": "application/json"}
         # Get all sprints
-        response_get = requests.get(url, headers=self.c_accept_header,
-                                    auth=(self.c_user, self.c_apikey))
+#        response_get = requests.get(url, headers=self.c_accept_header,
+#                                    auth=(self.c_user, self.c_apikey))
         # Save position of the active text to id parameter.
-        res = response_get.text
-        self.debug_log(json.dumps(json.loads(res), sort_keys=True, indent=4,
-                                    separators=(",", ": ")),response_get)
+ #       res = response_get.text
+ #       self.debug_log(json.dumps(json.loads(res), sort_keys=True, indent=4,
+ #                                   separators=(",", ": ")),response_get)
 
         # For some reason sometimes the request returns active sprint from other board.
         # The next lines will filter sprints related to other boards away.
-        input_dict = json.loads(res)
+#        input_dict = json.loads(res)
+
+        common_data = MyCommonFunc()
+        input_dict = common_data.make_request(requests,url,self.c_accept_header,
+            self.c_user,self.c_apikey)
         output_dict = [x for x in input_dict['values'] if x['originBoardId'] == int(self.c_boar_id)]
 
         res = ' '.join(map(str, output_dict))
 
         active_pos = res.find(sprint_state)
 
-        common_data = MyCommonFunc()
         common_data.get_sprint_details(res, active_pos)
         #id_postion = common_data.get_id_position(common_data)
         sprint_id = common_data.get_sprint_id()
