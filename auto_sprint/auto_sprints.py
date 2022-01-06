@@ -1,6 +1,6 @@
 '''
-Created on 2 Apr 2020
 @author: Jussi Niutanen
+Sprint close and new sprint automation module
 '''
 
 #import sys
