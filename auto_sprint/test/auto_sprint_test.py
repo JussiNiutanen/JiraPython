@@ -17,11 +17,14 @@ def test_valid_string(stringinput):
     assert stringinput_lenght > 0
     print(stringinput_lenght)
 
+    #APIKEY
+    consumer_secret = os.environ.get('APIKEY')
+
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
     user = "jussi.niutanen@gmail.com"
 
-    mydata = MyData(url, board_id, user, stringinput)
+    mydata = MyData(url, board_id, user, consumer_secret)
     assert mydata.update_sprints() == 200
 
 def func(param):
