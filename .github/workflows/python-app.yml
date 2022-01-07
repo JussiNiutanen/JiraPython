@@ -23,6 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip3 install pytest-cov
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
@@ -35,7 +36,7 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
-        pytest auto_sprint/test/*
+        pytest --cov=auto_sprint auto_sprint/test/*
         #pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
         #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
         #python3 auto_sprint/as_main.py https://niutanen.atlassian.net/ 28 jussi.niutanen@gmail.com '${{ secrets.APIKEY }}'
