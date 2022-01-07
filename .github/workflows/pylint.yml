@@ -23,4 +23,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi        
     - name: Analysing the code with pylint
       run: | 
+        # The next line was a original setup but it seems to be missing path 
+        # to file and for this reason does not work
+        #pylint `ls -R|grep .py$|xargs` 
         pylint $(find . -name "*.py" | xargs)
