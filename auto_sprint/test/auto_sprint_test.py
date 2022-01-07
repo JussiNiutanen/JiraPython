@@ -18,7 +18,8 @@ def test_valid_string(stringinput):
     print(stringinput_lenght)
 
     #APIKEY
-    consumer_secret = os.environ.get('APIKEY')
+    consumer_secret = os.environ.get('TESTKEY')
+    print(consumer_secret)
 
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
