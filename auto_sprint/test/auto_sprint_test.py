@@ -13,8 +13,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), 
 def test_valid_string(stringinput):
     """ Sprint close and create test """
 
-    assert len(stringinput) > 0
-    print(len(l))
+    stringinput_lenght = len(stringinput)
+    assert stringinput_lenght > 0
+    print(stringinput_lenght)
 
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
