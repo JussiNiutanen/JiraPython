@@ -34,4 +34,5 @@ jobs:
     - name: Test with pytest         # The name of the workflow (required)
       run: |
         #pytest -v testing/*
-        pytest --stringinput="${{secrets.APIKEY}}" auto_sprint/test/*
+        #pytest --stringinput="${{secrets.APIKEY}}" auto_sprint/test/*
+        pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
