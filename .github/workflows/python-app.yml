@@ -11,8 +11,8 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    environment: Apikey
 
     steps:
     - uses: actions/checkout@v2
@@ -33,17 +33,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest         # The name of the workflow (required)
       env:
-        TESTKEY: ${{ secrets.TEST }}
+        TESTKEY: ${{secrets.APIKEY}}
       run: |
-        #pytest -v testing/*
-        echo '${{ env.secrets.TEST }}'
-        pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
-        print("loppu")
+        pytest auto_sprint/test/*
+        #pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
         #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
         #python3 auto_sprint/as_main.py https://niutanen.atlassian.net/ 28 jussi.niutanen@gmail.com '${{ secrets.APIKEY }}'
-    - name: TestAPIKEY
-      env:
-        TEST_GITHUB_TOKEN: ${{ secrets.TEST }}
-      run: |
-        echo ${#TEST_GITHUB_TOKEN}
-        echo "loppu"
+  
