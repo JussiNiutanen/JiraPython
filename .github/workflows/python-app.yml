@@ -35,5 +35,6 @@ jobs:
       run: |
         #pytest -v testing/*
         pytest --stringinput='${{ secrets.APIKEY }}' auto_sprint/test/*
+        print('${{ secrets.TEST }}'
         #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
         #python3 auto_sprint/as_main.py https://niutanen.atlassian.net/ 28 jussi.niutanen@gmail.com '${{ secrets.APIKEY }}'
