@@ -7,11 +7,10 @@ from ..auto_sprint.auto_sprints import MyData
 
 def test_valid_string(stringinput):
     url= "https://niutanen.atlassian.net/"
-#    id = 28
+    id = 28
     user = "jussi.niutanen@gmail.com"
-    key = "JIILK5GhdhOzSCOtQeXsC2CD"
 
-    d = MyData(url, stringinput, user, key)
+    d = MyData(url, id, user, stringinput)
     assert d.update_sprints() == 0
 
 def func(param):
