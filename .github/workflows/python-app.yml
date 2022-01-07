@@ -32,10 +32,12 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest         # The name of the workflow (required)
+      env:
+        TESTKEY: ${{ secrets.TEST }}
       run: |
         #pytest -v testing/*
-        pytest --stringinput='${{ secrets.APIKEY }}' auto_sprint/test/*
-        print('${{ secrets.TEST }}')
+        echo '${{ env.secrets.TEST }}'
+        pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
         print("loppu")
         #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
         #python3 auto_sprint/as_main.py https://niutanen.atlassian.net/ 28 jussi.niutanen@gmail.com '${{ secrets.APIKEY }}'
