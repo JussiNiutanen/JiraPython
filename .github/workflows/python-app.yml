@@ -35,8 +35,6 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
-        echo "The API key is:${{secrets.APIKEY}}"  
-        echo $TESTKEY
         pytest auto_sprint/test/*
         #pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
         #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
