@@ -4,7 +4,7 @@ Module to update sprints
 '''
 import sys
 
-from auto_sprints import MyData
+from auto_sprint import MyData
 
 try:
     sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]

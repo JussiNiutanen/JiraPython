@@ -3,15 +3,21 @@
 Content of as_main_test.py
 '''
 
-from ..auto_sprint.auto_sprints import MyData
+
+import os
+import sys
+from auto_sprint import MyData
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), '..')))
+
 
 def test_valid_string(stringinput):
+    """ Sprint close and create test """
     url= "https://niutanen.atlassian.net/"
-    id = 28
+    board_id = "28"
     user = "jussi.niutanen@gmail.com"
 
-    d = MyData(url, id, user, stringinput)
-    assert d.update_sprints() == 0
+    mydata = MyData(url, board_id, user, stringinput)
+    assert mydata.update_sprints() == 200
 
 def func(param):
     '''Example for func test, return param + 1'''
@@ -20,11 +26,3 @@ def func(param):
 def test_answer():
     '''Example for func test'''
     assert func(4) == 5
-
-def test_one():
-    '''Example for func test'''
-    assert 1 == 1
-
-def test_two():
-    '''Example for func test'''
-    assert 2 == 2
