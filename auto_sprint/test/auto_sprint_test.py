@@ -3,17 +3,15 @@
 Content of as_main_test.py
 '''
 
-
 import os
 import sys
 from auto_sprint import MyData
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), '..')))
 
-
-def test_valid_string(stringinput):
+def test_valid_string(): #stringinput):
     """ Sprint close and create test """
 
-    stringinput_lenght = len(stringinput)
+    #stringinput_lenght = len(stringinput)
 #    assert stringinput_lenght > 0
 #    print(stringinput_lenght)
 
