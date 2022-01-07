@@ -5,8 +5,8 @@ Sprint close and new sprint automation module
 
 import json
 from datetime import datetime, timedelta
-from common import MyCommonFunc
 import requests
+from common import MyCommonFunc
 
 class MyData:
     """ MyData class """
