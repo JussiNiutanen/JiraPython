@@ -15,11 +15,12 @@ def test_valid_string(stringinput):
 
     stringinput_lenght = len(stringinput)
 #    assert stringinput_lenght > 0
-    print(stringinput_lenght)
+#    print(stringinput_lenght)
 
     #APIKEY
     consumer_secret = os.environ.get('TESTKEY')
-    print(consumer_secret)
+    assert len(consumer_secret) > 0
+#    assert consumer_secret == "TEST"
 
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
