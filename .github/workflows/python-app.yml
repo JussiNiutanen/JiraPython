@@ -33,4 +33,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest         # The name of the workflow (required)
       run: |
-        pytest -v testing/*
+        #pytest -v testing/*
+        pytest --stringinput=${{secret.APIKEY}} auto_sprint/test/*
