@@ -11,14 +11,10 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), 
 def test_valid_string(): #stringinput):
     """ Sprint close and create test """
 
-    #stringinput_lenght = len(stringinput)
-#    assert stringinput_lenght > 0
-#    print(stringinput_lenght)
-
-    #APIKEY
+    # The APIKEY is store as environment variable is in .bash_profile in computer
+    # and secret in GitHub workflow environmtent
     consumer_secret = os.environ.get('TESTKEY')
     assert len(consumer_secret) > 0
-#    assert consumer_secret == "TEST"
 
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
