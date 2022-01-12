@@ -5,7 +5,7 @@ Module to close and start sprints bi-weekly
 
 import sys
 from datetime import date
-from auto_sprint import MyData
+from as_auto_sprint import MyData
 
 weekNumber = date.today().isocalendar()[1]
 if 0==weekNumber%2:

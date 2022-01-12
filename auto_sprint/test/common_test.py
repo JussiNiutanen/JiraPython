@@ -5,8 +5,8 @@ Content of common_test.py
 
 import os
 import sys
-from common import MyCommonFunc
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), '..')))
+from common._common import MyCommonFunc
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("as_auto_sprint"), '..')))
 
 TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "DDL Sprint 45", \
     "originBoardId": 28, "self": "https://niutanen.atlassian.net/rest/agile/1.0/sprint/183", \

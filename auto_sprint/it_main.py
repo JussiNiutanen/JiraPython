@@ -5,7 +5,7 @@ Issue transition main module
 
 import sys
 import yaml
-from issue_transition import MyLogin
+from it_issue_transition import MyLogin
 
 try:
     sys.argv[1], sys.argv[2]
