@@ -5,7 +5,7 @@ Content of as_main_test.py
 
 import os
 import sys
-from auto_sprint import MyData
+from as_auto_sprint import MyData
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), '..')))
 
 def test_valid_string(): #stringinput):
@@ -14,7 +14,6 @@ def test_valid_string(): #stringinput):
     # The APIKEY is store as environment variable is in .bash_profile in computer
     # and secret in GitHub workflow environmtent
     consumer_secret = os.environ.get('TESTKEY')
-    assert len(consumer_secret) > 0
 
     url= "https://niutanen.atlassian.net/"
     board_id = "28"
