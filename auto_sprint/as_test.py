@@ -4,9 +4,8 @@ Content of as_main_test.py
 '''
 
 import os
-import sys
+#import sys
 from as_auto_sprint import MyData
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname("auto_sprint"), '..')))
 
 def test_valid_string(): #stringinput):
     """ Sprint close and create test """
@@ -16,7 +15,7 @@ def test_valid_string(): #stringinput):
     consumer_secret = os.environ.get('TESTKEY')
 
     url= "https://niutanen.atlassian.net/"
-    board_id = "28"
+    board_id = "29"
     user = "jussi.niutanen@gmail.com"
 
     mydata = MyData(url, board_id, user, consumer_secret)
