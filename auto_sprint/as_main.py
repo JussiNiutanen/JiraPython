@@ -4,7 +4,7 @@ Module to update sprints
 '''
 import sys
 
-from auto_sprint import MyData
+from as_auto_sprint import MyData
 
 print(sys.path)
 

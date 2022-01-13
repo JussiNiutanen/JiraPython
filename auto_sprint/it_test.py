@@ -30,5 +30,5 @@ def test_mylogin():
     new_state = mylogin.strip_and_casefold(NEW)
 
     active_sprint_id, active_sprint_name = mylogin.my_get_sprint()
-    KEY = mylogin.my_get_issue_key(active_sprint_id,current_state)
-#    mylogin.progress_issue(KEY,new_state)
+    issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
+    mylogin.progress_issue(issue_id,new_state)

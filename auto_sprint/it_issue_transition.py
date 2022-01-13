@@ -24,7 +24,7 @@ class MyLogin:
 
     def __init__(self, config):
         self.c_jira_url = self.strip_and_casefold(str(config['url']))
-        self.c_boar_id = self.strip_and_casefold(str(config['board']))
+        self.c_boar_id = config['board']
         self.c_user = self.strip_and_casefold(str(config['user']))
         self.c_apikey = str(config['apikey']).strip()
         self.c_accept_header = {"Accept": "application/json"}
@@ -35,6 +35,7 @@ class MyLogin:
 #                            filename='/tmp/auto_sprint.log', filemode='w')
 
     def set_apikey(self,apikey):
+        """ Set apikey internal variable """
         self.c_apikey = apikey
 
     @staticmethod

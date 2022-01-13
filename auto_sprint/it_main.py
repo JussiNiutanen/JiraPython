@@ -4,6 +4,7 @@ Issue transition main module
 '''
 
 import sys
+import os
 import yaml
 from it_issue_transition import MyLogin
 
