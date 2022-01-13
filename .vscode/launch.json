@@ -10,6 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "args": ["TO DO","DONE"],
             "env": {
                 "TESTKEY": "WuG6eQbNgy5qBODcfT2d0782"
             }

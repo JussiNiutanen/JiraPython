@@ -34,6 +34,9 @@ class MyLogin:
 #                            format='%(asctime)s %(levelname)s %(message)s',
 #                            filename='/tmp/auto_sprint.log', filemode='w')
 
+    def set_apikey(self,apikey):
+        self.c_apikey = apikey
+
     @staticmethod
     def debug_log(log_text, log_id =""):
         """ Debug log """

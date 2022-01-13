@@ -3,8 +3,6 @@
 Content of common_test.py
 '''
 
-import os
-import sys
 from common import MyCommonFunc
 
 TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "DDL Sprint 45", \
