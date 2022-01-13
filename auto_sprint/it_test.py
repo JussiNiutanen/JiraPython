@@ -6,8 +6,8 @@ Content of common_test.py
 import os
 from it_issue_transition import MyLogin
 
-CURRENT = "TO DO"
-NEW = "DONE"
+CURRENT = 'to do'
+NEW = 'done'
 
 TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "DDL Sprint 45", \
     "originBoardId": 28, "self": "https://niutanen.atlassian.net/rest/agile/1.0/sprint/183", \
@@ -31,6 +31,8 @@ def test_mylogin():
     current_state = mylogin.strip_and_casefold(CURRENT)
     new_state = mylogin.strip_and_casefold(NEW)
 
-    active_sprint_id = mylogin.my_get_sprint()
+    active_sprint_id, active_sprint_name = mylogin.my_get_sprint()
+
+    assert active_sprint_name == "TE Sprint 21"
     issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
     mylogin.progress_issue(issue_id,new_state)

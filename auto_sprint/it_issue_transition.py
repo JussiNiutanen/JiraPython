@@ -20,7 +20,9 @@ DONE = 'done' #transition_id = 31 in the board with id 20
 TODAY = 'today'
 FEEDBACK = 'feedback'
 
-CONFIG_PATH = "./auto_sprint/it_config.yaml"
+CONFIG_PATH = '/Users/niutanen/OneDrive - TUNI.fi/Git_mac/JiraPython/auto_sprint/it_config.yaml'
+#CONFIG_PATH = "auto_sprint/it_config.yaml"
+
 
 class MyLogin:
     """ MyLogin class """
