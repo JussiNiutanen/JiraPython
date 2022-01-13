@@ -18,14 +18,14 @@ isort==5.10.1
 keyring==21.8.0
 lazy-object-proxy==1.7.1
 lockfile==0.12.2
-lxml==4.6.4
+lxml==4.7.1
 mccabe==0.6.1
 msgpack==1.0.3
 packaging==20.9
 pastel==0.2.1
 pexpect==4.8.0
 Pillow==9.0.0
-pipenv==2021.11.23
+pipenv==2022.1.8
 pkginfo==1.8.2
 platformdirs==2.4.0
 pluggy==1.0.0
