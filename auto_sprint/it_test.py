@@ -4,7 +4,6 @@ Content of common_test.py
 '''
 
 import os
-import yaml
 from it_issue_transition import MyLogin
 
 CURRENT = "TO DO"
@@ -17,12 +16,13 @@ TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "
 def test_mylogin():
     """ Test for MyLogin class """
 
-    CONFIG_PATH = "./auto_sprint/it_config.yaml"
+#    CONFIG_PATH = "./auto_sprint/it_config.yaml"
 
-    with open(CONFIG_PATH,'r',encoding='utf8') as conf_file:
-        data = yaml.load(conf_file, Loader=yaml.FullLoader)
+#    with open(CONFIG_PATH,'r',encoding='utf8') as conf_file:
+#        data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
-    mylogin = MyLogin(data)
+    mylogin = MyLogin()
+#    mylogin = MyLogin(data)
 
     # The APIKEY is store as environment variable is in .bash_profile in computer
     # and secret in GitHub workflow environmtent
