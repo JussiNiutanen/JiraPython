@@ -3,8 +3,8 @@
 Content of common_test.py
 '''
 
-import yaml
 import os
+import yaml
 from it_issue_transition import MyLogin
 
 CURRENT = "TO DO"
@@ -29,6 +29,6 @@ def test_mylogin():
     current_state = mylogin.strip_and_casefold(CURRENT)
     new_state = mylogin.strip_and_casefold(NEW)
 
-    active_sprint_id, active_sprint_name = mylogin.my_get_sprint()
+    active_sprint_id = mylogin.my_get_sprint()
     issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
     mylogin.progress_issue(issue_id,new_state)
