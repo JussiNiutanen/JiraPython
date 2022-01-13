@@ -36,4 +36,4 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
-        pytest --cov=auto_sprint auto_sprint/*  
+        pytest --cov=auto_sprint auto_sprint/*_test.py
