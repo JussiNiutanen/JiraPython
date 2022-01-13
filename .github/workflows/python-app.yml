@@ -36,8 +36,4 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
-        pytest --cov=auto_sprint auto_sprint/test/*
-        #pytest --stringinput='${{ env.secrets.APIKEY }}' auto_sprint/test/*
-        #pytest --stringinput="secrets.APIKEY" auto_sprint/test/*
-        #python3 auto_sprint/as_main.py https://niutanen.atlassian.net/ 28 jussi.niutanen@gmail.com '${{ secrets.APIKEY }}'
-  
+        pytest --cov=auto_sprint auto_sprint/*  
