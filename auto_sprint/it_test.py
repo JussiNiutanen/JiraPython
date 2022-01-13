@@ -17,7 +17,9 @@ TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "
 def test_mylogin():
     """ Test for MyLogin class """
 
-    with open('./it_config.yaml','r',encoding='utf8') as conf_file:
+    CONFIG_PATH = "./auto_sprint/it_config.yaml"
+
+    with open(CONFIG_PATH,'r',encoding='utf8') as conf_file:
         data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
     mylogin = MyLogin(data)
