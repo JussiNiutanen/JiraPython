@@ -33,6 +33,7 @@ def test_mylogin():
 
     active_sprint_id, active_sprint_name = mylogin.my_get_sprint()
 
-    assert active_sprint_name == "TE Sprint 21"
+    assert len(active_sprint_name) > 0
+
     issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
     mylogin.progress_issue(issue_id,new_state)
