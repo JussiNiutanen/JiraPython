@@ -25,10 +25,10 @@ mylogin = MyLogin()
 #KEY = mylogin.my_get_issue_key(active_sprint_id,current_state)
 #mylogin.progress_issue(KEY,new_state)
 
-url= "https://niutanen.atlassian.net/"
-board_id = "29"
-user = "jussi.niutanen@gmail.com"
-mydata = MyData(url,board_id,user,"")
+URL= "https://niutanen.atlassian.net/"
+BOARD_ID = "29"
+USER = "jussi.niutanen@gmail.com"
+mydata = MyData(URL,BOARD_ID,USER,"")
 project_key = mydata.get_project_key()
 sprint_id, name = mylogin.my_get_sprint()
 name
