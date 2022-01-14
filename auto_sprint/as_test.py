@@ -15,11 +15,3 @@ def test_valid_string():
 
     mydata = MyData(URL, BOARD_ID, USER, "")
     assert mydata.update_sprints() == 200
-
-def test_create_issue():
-    """ Test create issue"""
-    mylogin = MyLogin()
-    mydata = MyData(URL,BOARD_ID,USER,"")
-    project_key = mydata.get_project_key()
-    sprint_id, name = mylogin.my_get_sprint()
-    mydata.new_issue(project_key,int(sprint_id),name + "Issue name for new issue")
