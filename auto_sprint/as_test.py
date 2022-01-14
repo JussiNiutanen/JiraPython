@@ -9,11 +9,11 @@ from it_issue_transition import MyLogin
 URL= "https://niutanen.atlassian.net/"
 BOARD_ID = "29"
 USER = "jussi.niutanen@gmail.com"
-mydata = MyData(URL, BOARD_ID, USER, "")
 
 def test_valid_string():
     """ Sprint close and create test """
 
+    mydata = MyData(URL, BOARD_ID, USER, "")
     assert mydata.update_sprints() == 200
 
 def test_create_issue():

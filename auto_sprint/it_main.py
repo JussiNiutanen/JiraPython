@@ -5,16 +5,12 @@ Issue transition main module
 
 import sys
 from it_issue_transition import MyLogin
-from as_auto_sprint import MyData
 
 try:
     sys.argv[1], sys.argv[2]
 except IndexError:
     print("\n TOO FEW PARAMETERS \n")
     sys.exit()
-
-#mycreateissue = MyCreateIssue()
-#mycreateissue.create_issue()
 
 mylogin = MyLogin()
 
