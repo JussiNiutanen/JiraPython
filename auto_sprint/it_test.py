@@ -4,7 +4,6 @@ Content of common_test.py
 '''
 
 import os
-from it_issue_transition import MyCreateIssue
 from it_issue_transition import MyLogin
 
 CURRENT = 'to do'
@@ -25,10 +24,6 @@ def test_mylogin():
     mylogin = MyLogin()
 #    mylogin = MyLogin(data)
 
-    # The APIKEY is store as environment variable is in .bash_profile in computer
-    # and secret in GitHub workflow environmtent
-    mylogin.set_apikey(os.environ.get('TESTKEY'))
-
     current_state = mylogin.strip_and_casefold(CURRENT)
     new_state = mylogin.strip_and_casefold(NEW)
 
@@ -41,5 +36,5 @@ def test_mylogin():
 
 def test_create_issue():
     """ Test create issue"""
-    mycreateissue = MyCreateIssue()
-    mycreateissue.create_issue()
+    mylogin = MyLogin()
+    mylogin.create_issue()

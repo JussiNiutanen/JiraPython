@@ -175,9 +175,34 @@ class MyLogin:
         text = text.strip().casefold()
         return text
 
-class MyCreateIssue:
+    #class MyCreateIssue:
     """ Class for adding issue to ongoing sprint """
 
-    @staticmethod
-    def create_issue():
-        return 1
+#    @staticmethod
+    def create_issue(self):
+        """ Create issue """
+        url = "https://niutanen.atlassian.net/rest/api/2/issue/"
+
+        headers = {
+        "Content-Type": "application/json"
+        }
+
+        payload = json.dumps( {
+            "fields": {
+                "project": {"key": "TE"},
+                "summary": "REST ye merry gentlemen.",
+                "issuetype": {
+                  "name": "Story"
+                }
+            }
+        } )
+
+        response = requests.request(
+            "POST",
+            url,
+            data=payload,
+            headers=headers,
+            auth=(self.c_user, self.c_apikey)
+        )
+
+        print(response.text)

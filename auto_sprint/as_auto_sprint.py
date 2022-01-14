@@ -4,6 +4,7 @@ Sprint close and new sprint automation module
 '''
 
 import json
+import os
 from datetime import datetime, timedelta
 import requests
 from common.common import MyCommonFunc
@@ -16,6 +17,12 @@ class MyData:
         self.c_boar_id = board_id
         self.c_user = user
         self.c_apikey = apikey
+
+    # The APIKEY is store as environment variable is in .bash_profile in computer
+    # and secret in GitHub workflow environmtent
+    env_apikey = os.environ.get('TESTKEY')
+    if len(env_apikey) > 0:
+        c_apikey = env_apikey
 
 #        logging.basicConfig(level=logging.DEBUG,
 #                            format='%(asctime)s %(levelname)s %(message)s',
@@ -142,7 +149,7 @@ class MyData:
         payload_new_issue = json.dumps( {
             "fields": {
                 "project":{"key": project_key},
-                "summary": "Planning " + sprint_name,
+                "summary": sprint_name,
                 "issuetype": {"name": "Story"},
                 "customfield_10021": sprint_id
            }
@@ -185,7 +192,7 @@ class MyData:
         future_sprint_id, future_sprint_name  = self.get_sprint("future")
 
         project_key = self.get_project_key()
-        self.new_issue(project_key,int(future_sprint_id),future_sprint_name)
+        self.new_issue(project_key,int(future_sprint_id),"Planning " + future_sprint_name)
         self.start_sprint(int(future_sprint_id))
 
         return 200
