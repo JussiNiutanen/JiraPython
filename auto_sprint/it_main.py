@@ -4,7 +4,6 @@ Issue transition main module
 '''
 
 import sys
-import os
 from it_issue_transition import MyLogin
 #from it_issue_transition import MyCreateIssue
 
@@ -14,20 +13,10 @@ except IndexError:
     print("\n TOO FEW PARAMETERS \n")
     sys.exit()
 
-#CONFIG_PATH = "./auto_sprint/it_config.yaml"
-
-#with open(CONFIG_PATH,'r',encoding='utf8') as conf_file:
-#    data = yaml.load(conf_file, Loader=yaml.FullLoader)
-
 #mycreateissue = MyCreateIssue()
 #mycreateissue.create_issue()
 
-#mylogin = MyLogin(data)
 mylogin = MyLogin()
-
-# The APIKEY is store as environment variable is in .bash_profile in computer
-# and secret in GitHub workflow environmtent
-#mylogin.set_apikey(os.environ.get('TESTKEY'))
 
 mylogin.create_issue()
 
