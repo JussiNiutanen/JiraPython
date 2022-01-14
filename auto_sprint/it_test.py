@@ -4,6 +4,7 @@ Content of common_test.py
 '''
 
 import os
+from it_issue_transition import MyCreateIssue
 from it_issue_transition import MyLogin
 
 CURRENT = 'to do'
@@ -37,3 +38,8 @@ def test_mylogin():
 
     issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
     mylogin.progress_issue(issue_id,new_state)
+
+def test_create_issue():
+    """ Test create issue"""
+    mycreateissue = MyCreateIssue()
+    mycreateissue.create_issue()

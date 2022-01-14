@@ -4,6 +4,7 @@ Issue transition module
 '''
 
 import json
+from sqlite3 import DateFromTicks
 import sys
 import requests
 import yaml
@@ -173,3 +174,10 @@ class MyLogin:
         """ Remove spaces and return the given text as lower case """
         text = text.strip().casefold()
         return text
+
+class MyCreateIssue:
+    """ Class for adding issue to ongoing sprint """
+
+    @staticmethod
+    def create_issue():
+        return 1
