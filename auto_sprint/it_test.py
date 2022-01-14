@@ -33,7 +33,7 @@ def test_mylogin():
     issue_id = mylogin.my_get_issue_key(active_sprint_id,current_state)
     mylogin.progress_issue(issue_id,new_state)
 
-def test_create_issue():
-    """ Test create issue"""
-    mylogin = MyLogin()
-    mylogin.create_issue()
+#def test_create_issue():
+#    """ Test create issue"""
+#    mylogin = MyLogin()
+#    mylogin.create_issue()

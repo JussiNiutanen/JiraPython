@@ -27,7 +27,7 @@ mylogin = MyLogin()
 
 # The APIKEY is store as environment variable is in .bash_profile in computer
 # and secret in GitHub workflow environmtent
-mylogin.set_apikey(os.environ.get('TESTKEY'))
+#mylogin.set_apikey(os.environ.get('TESTKEY'))
 
 mylogin.create_issue()
 

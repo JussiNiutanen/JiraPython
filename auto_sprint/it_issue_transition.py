@@ -5,6 +5,7 @@ Issue transition module
 
 import json
 #from sqlite3 import DateFromTicks
+import os
 import sys
 import requests
 import yaml
@@ -35,9 +36,17 @@ class MyLogin:
         self.c_jira_url = self.strip_and_casefold(str(config['url']))
         self.c_boar_id = config['board']
         self.c_user = self.strip_and_casefold(str(config['user']))
-        self.c_apikey = str(config['apikey']).strip()
         self.c_accept_header = {"Accept": "application/json"}
         self.config = config
+
+        # The APIKEY is store as environment variable is in .bash_profile in computer
+        # and secret in GitHub workflow environmtent
+        env_apikey = os.environ.get('TESTKEY')
+        self.c_apikey = env_apikey
+
+        #yaml_apikey = str(config['apikey']).strip()
+        #if yaml_apikey != "None":
+        #    self.c_apikey = yaml_apikey
 
 #        logging.basicConfig(level=logging.DEBUG,
 #                            format='%(asctime)s %(levelname)s %(message)s',

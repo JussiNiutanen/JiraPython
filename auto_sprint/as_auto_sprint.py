@@ -16,22 +16,22 @@ class MyData:
         self.c_jira_url = instance_url
         self.c_boar_id = board_id
         self.c_user = user
-        self.c_apikey = apikey
 
-    # The APIKEY is store as environment variable is in .bash_profile in computer
-    # and secret in GitHub workflow environmtent
-    env_apikey = os.environ.get('TESTKEY')
-    if len(env_apikey) > 0:
-        c_apikey = env_apikey
+        # The APIKEY is store as environment variable is in .bash_profile in computer
+        # and secret in GitHub workflow environmtent
+        env_apikey = os.environ.get('TESTKEY')
+        self.c_apikey = env_apikey
+        if len(str(apikey)) > 0:
+            self.c_apikey = apikey
 
 #        logging.basicConfig(level=logging.DEBUG,
 #                            format='%(asctime)s %(levelname)s %(message)s',
 #                            filename='/tmp/auto_sprint.log', filemode='w')
-    c_accept_header = {"Accept": "application/json"}
-    c_common_headers = {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-    }
+        self.c_accept_header = {"Accept": "application/json"}
+        self.c_common_headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
 
     @staticmethod
     def debug_log(log_text, log_id =""):
