@@ -13,6 +13,5 @@ try:
 except IndexError:
     sys.exit()
 
-
 mydata = MyData(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 mydata.update_sprints()
