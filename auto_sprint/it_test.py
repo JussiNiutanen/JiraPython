@@ -3,7 +3,6 @@
 Content of common_test.py
 '''
 
-import os
 from it_issue_transition import MyLogin
 
 CURRENT = 'to do'

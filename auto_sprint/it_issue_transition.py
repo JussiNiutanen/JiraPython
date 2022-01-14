@@ -4,7 +4,7 @@ Issue transition module
 '''
 
 import json
-from sqlite3 import DateFromTicks
+#from sqlite3 import DateFromTicks
 import sys
 import requests
 import yaml
@@ -176,7 +176,7 @@ class MyLogin:
         return text
 
     #class MyCreateIssue:
-    """ Class for adding issue to ongoing sprint """
+    #""" Class for adding issue to ongoing sprint """
 
 #    @staticmethod
     def create_issue(self):
