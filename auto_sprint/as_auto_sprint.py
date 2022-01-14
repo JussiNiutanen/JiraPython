@@ -9,8 +9,12 @@ from datetime import datetime, timedelta
 import requests
 from common.common import MyCommonFunc
 
+
 class MyData:
     """ MyData class """
+    URL= "https://niutanen.atlassian.net/"
+    BOARD_ID = "29"
+    USER = "jussi.niutanen@gmail.com"
 
     def __init__(self, instance_url, board_id, user, apikey):
         self.c_jira_url = instance_url
