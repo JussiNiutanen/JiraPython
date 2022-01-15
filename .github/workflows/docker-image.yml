@@ -15,11 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/docker/login@master
-      with: # Set the secret as an input
-        DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}    
     - name: Build the Docker image
       run: |
+        docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
         docker build . --file docker/dockerfile --tag niutanen/jira_python:$(date +%s)
         docker push niutanen/jira_python:$(date +%s)
