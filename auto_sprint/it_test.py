@@ -8,9 +8,9 @@ from it_issue_transition import MyLogin
 CURRENT = 'to do'
 NEW = 'done'
 
-TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "DDL Sprint 45", \
-    "originBoardId": 28, "self": "https://niutanen.atlassian.net/rest/agile/1.0/sprint/183", \
-    "startDate": "2022-01-07T05:33:05.000Z", "state": "future"'
+#TEST_STRING = '"endDate": "2022-01-14T05:33:05.000Z”,” id": 183, “name": "DDL Sprint 45", \
+#    "originBoardId": 28, "self": "https://niutanen.atlassian.net/rest/agile/1.0/sprint/183", \
+#    "startDate": "2022-01-07T05:33:05.000Z", "state": "future"'
 
 def test_mylogin():
     """ Test for MyLogin class """
