@@ -19,4 +19,5 @@ jobs:
       run: |
         docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
         docker build . --file docker/dockerfile --tag '${{ secrets.DOCKERHUB_USERNAME }}'/jira_python:$(date +%s)
+        docker tag jira_python niutanen/jira_python:$(date +%s)
         docker push '${{ secrets.DOCKERHUB_USERNAME }}'/jira_python:$(date +%s)
