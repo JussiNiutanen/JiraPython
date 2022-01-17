@@ -17,6 +17,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-        docker echo ${{ secrets.DOCKERHUB_PASSWORD }} | login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         docker build . --file docker/dockerfile --tag '${{ secrets.DOCKERHUB_USERNAME }}'/jira_python
         docker push '${{ secrets.DOCKERHUB_USERNAME }}'/jira_python
