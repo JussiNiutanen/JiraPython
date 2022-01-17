@@ -4,16 +4,11 @@ Issue transition module
 '''
 
 import json
-#from sqlite3 import DateFromTicks
 import os
 import sys
 import requests
 import yaml
-#from requests.sessions import TooManyRedirects
-#from _dummy_thread import exit
-#from datetime import datetime, timedelta
-#import logging from _ast import If
-#import yaml
+from pathlib import Path
 
 # The transition id might depend on the board with id 20
 TODO = 'todo'
@@ -22,7 +17,7 @@ DONE = 'done' #transition_id = 31 in the board with id 20
 TODAY = 'today'
 FEEDBACK = 'feedback'
 
-CONFIG_PATH = os.path.join(os.path.expanduser('~'), "JiraPython/auto_sprint/it_config.yaml")
+CONFIG_PATH = os.path.join(Path.home(), "it_config.yaml")
 
 class MyLogin:
     """ MyLogin class """
