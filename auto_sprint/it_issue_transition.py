@@ -22,16 +22,15 @@ DONE = 'done' #transition_id = 31 in the board with id 20
 TODAY = 'today'
 FEEDBACK = 'feedback'
 
-#CONFIG_PATH = '/Users/niutanen/OneDrive - TUNI.fi/Git_mac/JiraPython/auto_sprint/it_config.yaml'
-#CONFIG_PATH = "./auto_sprint/it_config.yaml"
-CONFIG_PATH = os.path.join(os.path.expanduser('~'), "/JiraPython/auto_sprint/it_config.yaml")
+CONFIG_PATH = os.path.join(os.path.expanduser('~'), "JiraPython/auto_sprint/it_config.yaml")
 
 class MyLogin:
     """ MyLogin class """
 
     def __init__(self):
         with open(CONFIG_PATH,'r',encoding='utf8') as conf_file:
-            config = yaml.safe_load(conf_file, Loader=yaml.FullLoader)
+            config = yaml.safe_load(conf_file)
+            #config = yaml.safe_load(conf_file, Loader=yaml.FullLoader)
 
         self.c_jira_url = self.strip_and_casefold(str(config['url']))
         self.c_boar_id = config['board']

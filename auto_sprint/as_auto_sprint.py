@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 import requests
 from common.common import MyCommonFunc
 
-
 class MyData:
     """ MyData class """
     URL= "https://niutanen.atlassian.net/"
