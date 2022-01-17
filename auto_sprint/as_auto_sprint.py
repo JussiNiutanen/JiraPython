@@ -12,7 +12,7 @@ from common.common import MyCommonFunc
 class MyData:
     """ MyData class """
     URL= "https://niutanen.atlassian.net/"
-    BOARD_ID = "29"
+    BOARD_ID = "39"
     USER = "jussi.niutanen@gmail.com"
 
     def __init__(self, instance_url, board_id, user, apikey):
@@ -165,6 +165,7 @@ class MyData:
            headers=my_headers,
            auth=(self.c_user, self.c_apikey)
         )
+        # TBD if response 400 create issue with issue type task
 
         self.debug_log(json.dumps(json.loads(response_new_issue.text), sort_keys=True,
             indent=4, separators=(",", ": ")),response_new_issue)
