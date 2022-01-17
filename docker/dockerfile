@@ -3,5 +3,5 @@
 FROM python:3
 #COPY . /JiraPython
 #WORKDIR /JiraPython
-RUN pip3 install -r ./JiraPython/requirements.txt
+#RUN pip3 install -r ./JiraPython/requirements.txt
 CMD ["python3”, "/JiraPython/auto_sprint/new_issue.py"]
