@@ -1,4 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:18.04
+FROM python:3
 COPY . /JiraPython
-CMD python /JiraPython/auto_sprint/new_issue.py
+RUN pip3 install -r ./JiraPython/requirements.txt
+CMD python3 /JiraPython/auto_sprint/new_issue.py
