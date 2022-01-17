@@ -6,9 +6,9 @@ Issue transition module
 import json
 import os
 import sys
+from pathlib import Path
 import requests
 import yaml
-from pathlib import Path
 
 # The transition id might depend on the board with id 20
 TODO = 'todo'
