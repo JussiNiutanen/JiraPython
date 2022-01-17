@@ -36,4 +36,5 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
+        cp auto_sprint/it_config.yaml ~/it_config.yaml
         pytest --cov=auto_sprint auto_sprint/*_test.py
