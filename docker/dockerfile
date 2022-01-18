@@ -3,9 +3,13 @@
 # This file uses Ubuntu rather than pyhton because this leads to smaller image size.
 # Ubuntu does not include all Python versions.
 FROM ubuntu:18.04
+LABEL maintainer="jussi.niutanen@gmail.com"
+
 COPY . /JiraPython
 WORKDIR /JiraPython
-RUN python3 -m pip install --upgrade pip | \
+#RUN python3 -m pip install --upgrade pip | \
+RUN apt-get update \
+    && apt-get install -y python3-pip python3 \
     pip3 install -r ./requirements.txt | \
     cp auto_sprint/it_config.yaml /root/it_config.yaml
 #RUN cp JiraPython/auto_sprint/it_config.yaml ~/it_config.yaml
