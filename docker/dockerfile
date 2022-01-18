@@ -9,8 +9,10 @@ COPY . /JiraPython
 WORKDIR /JiraPython
 #RUN python3 -m pip install --upgrade pip | \
 # This file does not use software-properties-common because there is no need to manage packages.
-RUN apt-get update && apt-get install -y python3-pip python3 | \
-    pip3 install -r ./requirements.txt | \
+RUN apt-get update && apt-get -y install -y python3 python3-pip
+#| \
+RUN which python3 | which pip3
+RUN pip3 install -r ./requirements.txt | \
     cp auto_sprint/it_config.yaml /root/it_config.yaml
 #RUN cp JiraPython/auto_sprint/it_config.yaml ~/it_config.yaml
 #RUN pwd
