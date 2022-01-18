@@ -5,6 +5,7 @@ COPY . /JiraPython
 WORKDIR /JiraPython
 #RUN pip3 install -r ./JiraPython/requirements.txt
 #RUN cp JiraPython/auto_sprint/it_config.yaml ~/it_config.yaml
-RUN ls -la JiraPython
+RUN ls -la
+# /JiraPython
 #RUN pwd
 #CMD ["python3”, "JiraPython/auto_sprint/new_issue.py"]
