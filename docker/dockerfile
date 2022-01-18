@@ -1,16 +1,17 @@
 # syntax=docker/dockerfile:1
-#FROM python:3
 
-# This file should use Ubuntu rather than pyhton because this leads to smaller image size.
+# This file uses Ubuntu rather than pyhton:3 because this leads to smaller image size.
 # Ubuntu does not include all Python versions.
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+FROM pyhton:3
 LABEL maintainer="jussi.niutanen@gmail.com"
 
 COPY . /JiraPython
 WORKDIR /JiraPython
 
 # This file does not use software-properties-common because there is no need to manage packages.
-RUN apt-get update && apt-get -y install -y apt-utils python3 python3-pip && pip3 install -r ./requirements.txt | cp auto_sprint/it_config.yaml /root/it_config.yaml
+#RUN apt-get update && apt-get -y install -y apt-utils python3 python3-pip &&
+RUN pip3 install -r ./requirements.txt | cp auto_sprint/it_config.yaml /root/it_config.yaml
 
 #WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 #WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
