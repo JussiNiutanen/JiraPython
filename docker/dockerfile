@@ -2,8 +2,8 @@
 
 # This file uses Ubuntu rather than pyhton:3 because this leads to smaller image size.
 # Ubuntu does not include all Python versions.
-#FROM ubuntu:18.04
-FROM pyhton:3
+FROM ubuntu:18.04
+#FROM pyhton:3
 LABEL maintainer="jussi.niutanen@gmail.com"
 
 COPY . /JiraPython
