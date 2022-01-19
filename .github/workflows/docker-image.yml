@@ -22,5 +22,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}    
     - name: Build the Docker image
       run: |
-        docker build . --file docker/dockerfile --tag '${{ secrets.DOCKERHUB_USERNAME }}'/niutanen:jira_python
-        docker push '${{ secrets.DOCKERHUB_USERNAME }}'/niutanen:jira_python
+        docker build . --file docker/dockerfile --tag '${{ secrets.DOCKERHUB_USERNAME }}'/python4jira
+        docker push '${{ secrets.DOCKERHUB_USERNAME }}'/python4jira
