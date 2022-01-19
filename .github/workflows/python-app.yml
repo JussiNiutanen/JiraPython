@@ -36,6 +36,6 @@ jobs:
       env:
         TESTKEY: ${{secrets.APIKEY}}
       run: |
-        cp ./skripts/it_config.yaml ~/it_config.yaml
+        cp ./scripts/it_config.yaml ~/it_config.yaml
         cat ~/it_config.yaml
-        pytest --cov=skripts skripts/*_test.py
+        pytest --cov=scripts scripts/*_test.py
