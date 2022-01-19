@@ -10,7 +10,7 @@ COPY . /JiraPython
 WORKDIR /JiraPython
 
 # This file does not use software-properties-common because there is no need to manage packages.
-RUN apt-get update && apt-get -y install -y apt-utils python3 python3-pip && python3 -m pip3 install --upgrade pip && pip3 install -r ./requirements.txt && cp auto_sprint/it_config.yaml /root/it_config.yaml
+RUN apt-get update && apt-get -y install -y apt-utils python3 python3-pip && python3 -m pip3 install --upgrade pip && /usr/local/bin/pip3 install -r ./requirements.txt && cp auto_sprint/it_config.yaml /root/it_config.yaml
 
 #WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 #WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
