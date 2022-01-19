@@ -1,3 +1,3 @@
 #!/bin/bash
 pwd
-#python '/Users/niutanen/OneDrive - TUNI.fi/Git_mac/JiraPython/auto_sprint/new_issue.py'
+#python '/Users/niutanen/OneDrive - TUNI.fi/Git_mac/JiraPython/skripts/new_issue.py'
