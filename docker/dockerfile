@@ -2,17 +2,23 @@
 
 # This file uses Ubuntu rather than pyhton:3 because this leads to smaller image size.
 # Ubuntu does not include all Python versions.
-FROM ubuntu:18.04
-#FROM pyhton:3
+#FROM ubuntu:18.04
+FROM pyhton:3
 LABEL maintainer="jussi.niutanen@gmail.com"
 
 COPY . /JiraPython
 WORKDIR /JiraPython
 
+# The correct way to install Python https://techviewleo.com/how-to-install-python-on-ubuntu-linux/
+#apt update -y && apt upgrade -y && apt -y install software-properties-common
+# The next might require some input and need to find out how enter values in docker
+#add-apt-repository ppa:deadsnakes/ppa
+
 # This file does not use software-properties-common because there is no need to manage packages.
 #RUN apt-get update && apt-get -y install -y apt-utils python3 python3-pip && python3 -m pip3 install --upgrade pip && /usr/local/bin/pip3 install -r ./requirements.txt && cp auto_sprint/it_config.yaml /root/it_config.yaml
 #RUN apt-get update && apt-get -y install apt-utils python-setuptools python3 python3-pip && easy_install pip3 && pip3 install -r ./requirements.txt && cp auto_sprint/it_config.yaml /root/it_config.yaml
-RUN apt update && apt -y upgrade && apt -y install software-properties-common && add-apt-repository -y ppa:deadsnakes/ppa
+RUN apt update && apt -y upgrade
+#&& apt -y install software-properties-common && add-apt-repository -y ppa:deadsnakes/ppa
 #&& apt install -y python3-pip
 #apt-utils python3
 #&& pip3 install -r ./requirements.txt |
