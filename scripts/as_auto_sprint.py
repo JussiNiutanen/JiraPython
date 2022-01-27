@@ -12,7 +12,7 @@ from common.common import MyCommonFunc
 class MyData:
     """ MyData class """
     URL= "https://niutanen.atlassian.net/"
-    BOARD_ID = "39"
+    BOARD_ID = "41"
     USER = "jussi.niutanen@gmail.com"
 
     def __init__(self, instance_url, board_id, user, apikey):
