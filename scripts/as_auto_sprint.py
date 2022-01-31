@@ -148,6 +148,7 @@ class MyData:
         return key_name
 
     def create_issues(self, project_key, sprint_id,name):
+        """ Create new stories to the active sprint """
         #if issue_summary.find("\n"):
         #    table_lehgth = len(issues)
         #for counter in range(table_lehgth):
