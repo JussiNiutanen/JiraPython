@@ -13,7 +13,6 @@ project_key = mydata.get_project_key()
 sprint_id, name = mylogin.my_get_sprint()
 
 try:
-    sys.argv[1]
     name = sys.argv[1]
 except IndexError:
     name = "New issue to" + name
