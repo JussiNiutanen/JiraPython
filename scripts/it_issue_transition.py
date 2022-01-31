@@ -178,10 +178,6 @@ class MyLogin:
         text = text.strip().casefold()
         return text
 
-    #class MyCreateIssue:
-    #""" Class for adding issue to ongoing sprint """
-
-#    @staticmethod
     def create_issue(self):
         """ Create issue """
         url = "https://niutanen.atlassian.net/rest/api/2/issue/"

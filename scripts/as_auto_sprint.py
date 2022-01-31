@@ -147,6 +147,13 @@ class MyData:
         key_name = key_name[0:key_name.find("\"")]
         return key_name
 
+    def create_issues(self, project_key, sprint_id,name):
+        #if issue_summary.find("\n"):
+        #    table_lehgth = len(issues)
+        #for counter in range(table_lehgth):
+
+        self.new_issue(project_key,sprint_id,name)
+
     def new_issue(self, project_key,sprint_id,issue_summary):
         """ Create new story to the new sprint """
         payload_new_issue = json.dumps( {
