@@ -10,11 +10,11 @@ from it_issue_transition import MyLogin
 mylogin = MyLogin()
 
 try:
-    board_id = sys.argv[1]
+    BOARD_ID = sys.argv[1]
 except IndexError:
-    board_id = MyData.BOARD_ID
+    BOARD_ID = MyData.BOARD_ID
 
-mydata = MyData(MyData.URL,board_id,MyData.USER,"")
+mydata = MyData(MyData.URL,BOARD_ID,MyData.USER,"")
 project_key = mydata.get_project_key()
 sprint_id, name = mylogin.my_get_sprint()
 
